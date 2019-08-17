@@ -7,20 +7,23 @@
   
   
   
-  <title>rnn | 寥寥无几</title>
+  <title>python实现简单的PID控制 | 寥寥无几</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="前阵子有人说我好久不更新博客了。  好吧，刚刚用循环神经网络，以我所有的博客为训练样本，写了几段极端抽象的话……（一点都不像话）">
-<meta name="keywords" content="随笔">
+  <meta name="description" content="今天做个技术博主，用Python实现PID算法。网上有其他的教程，但是感觉不够亲和。我按学过的东西重新手撸了一遍代码，比较简单通俗。">
+<meta name="keywords" content="学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="rnn">
-<meta property="og:url" content="http://yoursite.com/2019/02/22/rnn/index.html">
+<meta property="og:title" content="python实现简单的PID控制">
+<meta property="og:url" content="http://yoursite.com/2019/08/17/pid/index.html">
 <meta property="og:site_name" content="寥寥无几">
-<meta property="og:description" content="前阵子有人说我好久不更新博客了。  好吧，刚刚用循环神经网络，以我所有的博客为训练样本，写了几段极端抽象的话……（一点都不像话）">
+<meta property="og:description" content="今天做个技术博主，用Python实现PID算法。网上有其他的教程，但是感觉不够亲和。我按学过的东西重新手撸了一遍代码，比较简单通俗。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-02-22T09:17:31.502Z">
+<meta property="og:image" content="http://yoursite.com/2019/08/17/pid/1.jpg">
+<meta property="og:image" content="http://yoursite.com/2019/08/17/pid/2.jpg">
+<meta property="og:updated_time" content="2019-08-17T13:32:52.325Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="rnn">
-<meta name="twitter:description" content="前阵子有人说我好久不更新博客了。  好吧，刚刚用循环神经网络，以我所有的博客为训练样本，写了几段极端抽象的话……（一点都不像话）">
+<meta name="twitter:title" content="python实现简单的PID控制">
+<meta name="twitter:description" content="今天做个技术博主，用Python实现PID算法。网上有其他的教程，但是感觉不够亲和。我按学过的东西重新手撸了一遍代码，比较简单通俗。">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/17/pid/1.jpg">
   
     <link rel="alternative" href="/atom.xml" title="寥寥无几" type="application/atom+xml">
   
@@ -279,11 +282,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-rnn" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-pid" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2019/02/22/rnn/" class="article-date">
-      <time datetime="2019-02-22T09:10:06.000Z" itemprop="datePublished">2019-02-22</time>
+      <a  href="/2019/08/17/pid/" class="article-date">
+      <time datetime="2019-08-17T12:50:52.000Z" itemprop="datePublished">2019-08-17</time>
 </a>
 
     </div>
@@ -297,7 +300,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      rnn
+      python实现简单的PID控制
     </h1>
   
 
@@ -306,10 +309,14 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/学习/">学习</a>
+    </div>
+
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/学习/">学习</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -319,15 +326,31 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>前阵子有人说我好久不更新博客了。 </p>
-<p>好吧，刚刚用循环神经网络，以我所有的博客为训练样本，写了几段极端抽象的话……（一点都不像话） </p>
+        <p>今天做个技术博主，用Python实现PID算法。网上有其他的教程，但是感觉不够亲和。我按学过的东西重新手撸了一遍代码，比较简单通俗。 </p>
 <a id="more"></a>
 <the rest="" of="" contents="" |="" 余下全文=""> 
 
-<h3 id="【一】"><a href="#【一】" class="headerlink" title="【一】"></a>【一】</h3><p>活是其实地小里家地垃的。 但不意义不很9吾人着个超看个自习的考撕旁上，干上心叫数会人，考法，想迎考先，更数个星年心题，果坐再看的想法真相，，总是一样，看着的午加半的人总又中法真相时畏缩不很多时候自 </p>
-<h3 id="【二】"><a href="#【二】" class="headerlink" title="【二】"></a>【二】</h3><p>但不灰色的人对完来的方法大感兴趣，但其实我没有一样的人总是何尝不是贪老骂法，给人如忘免 少年遇地。 那家点想了后得也中有那样的人生比中的东西，我很多的人，，历精会即三忆年的创造力没对作绘的清悔是筹 </p>
-<h3 id="【三】"><a href="#【三】" class="headerlink" title="【三】"></a>【三】</h3><p>0本我，越在要要心学，不着想给自么样的，了，“要炫耀，总要在到自簸而煎熬的心星不不敢”，，加当的，加上的骂想的力果，，历是，会看那样的那些想想做总表么是想想“，想了摇会颠扰不习的，历是，加上的黑暗， </p>
-<p> –<br>笑死</p>
+
+
+<h3 id="举例说明"><a href="#举例说明" class="headerlink" title="举例说明"></a>举例说明</h3><p>举例还是举那个通俗的水缸的例子。 </p>
+<p>假设现在有一个水缸和一个桶，水缸每秒钟会漏一定的水，现在需要水缸保持一定的水位，就需要用桶不断地对水缸加水/舀水。 </p>
+<p>而每次加水/舀水的量，就是我们要通过PID去计算的量。 </p>
+<h3 id="水缸-PID-类"><a href="#水缸-PID-类" class="headerlink" title="水缸(PID)类"></a>水缸(PID)类</h3><p>首先建立一个类，代码如下：</p>
+<figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">tank</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, P=<span class="number">0.2</span>, I=<span class="number">0.01</span>, D=<span class="number">0.1</span>)</span>:</span><span class="comment">#初始化</span></span><br><span class="line">        self.Kp = P</span><br><span class="line">        self.Ki = I</span><br><span class="line">        self.Kd = D</span><br><span class="line">        self.clear()</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">clear</span><span class="params">(self)</span>:</span></span><br><span class="line">        self.SetLevel = <span class="number">0.0</span><span class="comment">#期望水位</span></span><br><span class="line">        self.PTerm = <span class="number">0.0</span></span><br><span class="line">        self.ITerm = <span class="number">0.0</span></span><br><span class="line">        self.DTerm = <span class="number">0.0</span></span><br><span class="line">        self.last_error = <span class="number">0.0</span></span><br><span class="line">        self.windup_guard = <span class="number">100.0</span></span><br><span class="line">        self.output = <span class="number">0.0</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">update</span><span class="params">(self, feedback_value)</span>:</span></span><br><span class="line">        error = self.SetLevel - feedback_value</span><br><span class="line">        <span class="comment">#比例环</span></span><br><span class="line">        self.PTerm = self.Kp * error</span><br><span class="line">        <span class="comment">#积分环</span></span><br><span class="line">        self.ITerm += error</span><br><span class="line">        <span class="keyword">if</span> (self.ITerm &lt; -self.windup_guard):</span><br><span class="line">            self.ITerm = -self.windup_guard</span><br><span class="line">        <span class="keyword">elif</span> (self.ITerm &gt; self.windup_guard):</span><br><span class="line">            self.ITerm = self.windup_guard</span><br><span class="line">        <span class="comment">#微分环</span></span><br><span class="line">        delta_error = error-self.last_error</span><br><span class="line">        self.DTerm = delta_error</span><br><span class="line">        self.last_error = error</span><br><span class="line">        <span class="comment">#输出</span></span><br><span class="line">        self.output = self.PTerm + (self.Ki * self.ITerm) + (self.Kd * self.DTerm)</span><br></pre></td></tr></table></figure>
+<p>比较简单易懂，不再详细解释。 </p>
+<p>需要注意一下，代码中积分环和微分环的参数，与公式中Ti、Td的对应关系，调PID参数的时候要清楚哪个是哪个。 </p>
+<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>先初始化一些参数：<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"></span><br><span class="line"><span class="comment">#实例化“水缸”类</span></span><br><span class="line">tank1 = tank(<span class="number">0.5</span>, <span class="number">0.2</span>, <span class="number">0.01</span>)</span><br><span class="line"><span class="comment">#当前水位</span></span><br><span class="line">current_level = <span class="number">20</span></span><br><span class="line"><span class="comment">#期望水位</span></span><br><span class="line">tank1.SetLevel = <span class="number">100</span></span><br><span class="line"><span class="comment">#漏水量</span></span><br><span class="line">water_loss = <span class="number">10</span></span><br><span class="line"><span class="comment">#用于储存水位变化的列表</span></span><br><span class="line">levels=[<span class="number">20</span>]</span><br></pre></td></tr></table></figure></p>
+<p>用for循环实现，这里为了方便理解，将一次循环的时间设为一个单位时间，其余所有有关水的变量的单位均为“/单位时间”。<br><figure class="highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>):</span><br><span class="line">    <span class="comment">#可将漏水量设置成随机变量</span></span><br><span class="line">    <span class="comment">#water_loss = random.randint(10,15)</span></span><br><span class="line">    tank1.update(current_level)</span><br><span class="line">    <span class="comment">#应加水量</span></span><br><span class="line">    water_gain = tank1.output</span><br><span class="line">    <span class="comment">#更新当前水位</span></span><br><span class="line">    current_level = current_level+water_gain-water_loss</span><br><span class="line">    levels.append(current_level)</span><br><span class="line">    print(current_level, time.time())</span><br><span class="line">plt.plot(levels)</span><br><span class="line">plt.grid(<span class="keyword">True</span>)</span><br><span class="line">print(max(levels))</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure></p>
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p>以上程序运行结果如下： </p>
+<img src="/2019/08/17/pid/1.jpg" title="漏水量为定值"> 
+<p>初始水位为20，漏水量为10，期望水位为100，在时间为20左右时水位稳定在100。 </p>
+<p>倘若将每单位时间漏水量设为变量（随机数），则结果如下： </p>
+<img src="/2019/08/17/pid/2.jpg" title="漏水量为变量"> 
+<p>漏水量为变量时，最终结果为水位在100左右变化。 </p>
+<p>这个结果比较有意思，倘若想要得到误差更小的结果，可能还需要一些其他的辅助的算法，有空我再琢磨一下。 </p>
+<p>啊难得做一次技术博主，好累脑子哦。 </p>
+<p>以上。 </p>
+<p>2019.8.17<br>明故宫·寝室 </p>
 </the>
       
     </div>
@@ -336,13 +359,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2019/02/22/rnn/">rnn</a></p>
+        <p><span>本文标题:</span><a  href="/2019/08/17/pid/">python实现简单的PID控制</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 吉吉 的个人博客">吉吉</a></p>
-        <p><span>发布时间:</span>2019年02月22日 - 17时10分</p>
-        <p><span>最后更新:</span>2019年02月22日 - 17时17分</p>
+        <p><span>发布时间:</span>2019年08月17日 - 20时50分</p>
+        <p><span>最后更新:</span>2019年08月17日 - 21时32分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2019/02/22/rnn/" title="rnn">http://yoursite.com/2019/02/22/rnn/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/02/22/rnn/　　作者: 吉吉" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/08/17/pid/" title="python实现简单的PID控制">http://yoursite.com/2019/08/17/pid/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/08/17/pid/　　作者: 吉吉" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -353,18 +376,9 @@
 
 <nav id="article-nav">
   
-    <a  href="/2019/02/28/taoli/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          2019书单
-        
-      </div>
-    </a>
   
-  
-    <a  href="/2018/12/10/fcwy/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">腐草为萤</div>
+    <a  href="/2019/07/27/DecisionDecidingOnFuture/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">决定未来的一点想法</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -376,7 +390,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#【一】"><span class="toc-number">1.</span> <span class="toc-text">【一】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#【二】"><span class="toc-number">2.</span> <span class="toc-text">【二】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#【三】"><span class="toc-number">3.</span> <span class="toc-text">【三】</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#举例说明"><span class="toc-number">1.</span> <span class="toc-text">举例说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#水缸-PID-类"><span class="toc-number">2.</span> <span class="toc-text">水缸(PID)类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实现"><span class="toc-number">3.</span> <span class="toc-text">实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结果"><span class="toc-number">4.</span> <span class="toc-text">结果</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -437,7 +451,7 @@
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: 'rnn', // 可选。默认为 location.href
+  id: 'python实现简单的PID控制', // 可选。默认为 location.href
   owner: 'nuaajhc',
   repo: 'nuaajhc.github.io',
   oauth: {
@@ -454,13 +468,11 @@ gitment.render('comments')
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2019/02/28/taoli/" title="上一篇: 2019书单">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2018/12/10/fcwy/" title="下一篇: 腐草为萤">
+            <a  href="/2019/07/27/DecisionDecidingOnFuture/" title="下一篇: 决定未来的一点想法">
                 <i class="fa fa-angle-right"></i>
             </a>
         
