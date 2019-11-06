@@ -7,20 +7,20 @@
   
   
   
-  <title>我们的观点从何而来 | 寥寥无几</title>
+  <title>Robotics(3)VTK读取STL | 寥寥无几</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我们的观点从何而来  夜色瘫软。窗外不知是蛐蛐还是蝈蝈的虫子不知疲倦地叫着，一如童年无数个难眠的夏夜。最近的一些想法的合集，随便整理写下来。">
-<meta name="keywords" content="随笔">
+  <meta name="description" content="这一篇主要介绍一下VTK，以及用VTK读取并显示STL文件。">
+<meta name="keywords" content="Robotics">
 <meta property="og:type" content="article">
-<meta property="og:title" content="我们的观点从何而来">
-<meta property="og:url" content="http://yoursite.com/2018/08/23/idea/index.html">
+<meta property="og:title" content="Robotics(3)VTK读取STL">
+<meta property="og:url" content="http://yoursite.com/2019/10/25/robo3/index.html">
 <meta property="og:site_name" content="寥寥无几">
-<meta property="og:description" content="我们的观点从何而来  夜色瘫软。窗外不知是蛐蛐还是蝈蝈的虫子不知疲倦地叫着，一如童年无数个难眠的夏夜。最近的一些想法的合集，随便整理写下来。">
+<meta property="og:description" content="这一篇主要介绍一下VTK，以及用VTK读取并显示STL文件。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-21T08:58:35.087Z">
+<meta property="og:updated_time" content="2019-10-25T04:56:21.566Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="我们的观点从何而来">
-<meta name="twitter:description" content="我们的观点从何而来  夜色瘫软。窗外不知是蛐蛐还是蝈蝈的虫子不知疲倦地叫着，一如童年无数个难眠的夏夜。最近的一些想法的合集，随便整理写下来。">
+<meta name="twitter:title" content="Robotics(3)VTK读取STL">
+<meta name="twitter:description" content="这一篇主要介绍一下VTK，以及用VTK读取并显示STL文件。">
   
     <link rel="alternative" href="/atom.xml" title="寥寥无几" type="application/atom+xml">
   
@@ -279,11 +279,11 @@
         </header>
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-idea" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-robo3" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a  href="/2018/08/23/idea/" class="article-date">
-      <time datetime="2018-08-23T00:43:40.000Z" itemprop="datePublished">2018-08-23</time>
+      <a  href="/2019/10/25/robo3/" class="article-date">
+      <time datetime="2019-10-25T04:35:30.000Z" itemprop="datePublished">2019-10-25</time>
 </a>
 
     </div>
@@ -297,7 +297,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      我们的观点从何而来
+      Robotics(3)VTK读取STL
     </h1>
   
 
@@ -306,10 +306,14 @@
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/学习/">学习</a>
+    </div>
+
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Robotics/">Robotics</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -319,52 +323,13 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>我们的观点从何而来 </p>
-<p>夜色瘫软。<br>窗外不知是蛐蛐还是蝈蝈的虫子不知疲倦地叫着，一如童年无数个难眠的夏夜。<br>最近的一些想法的合集，随便整理写下来。<br><a id="more"></a></p>
-<the rest="" of="" contents="" |="" 余下全文="">   
+        <p>这一篇主要介绍一下VTK，以及用VTK读取并显示STL文件。 </p>
+<a id="more"></a>
+<the rest="" of="" contents="" |="" 余下全文=""> 
 
-<h2 id="境界"><a href="#境界" class="headerlink" title="境界"></a>境界</h2><p>很多人都知道两个“人生三境界”之说，一为王国维先生在《人间词话》中提出的“立、守、得”三重境界，第一境界“昨夜西风凋碧树。独上高楼，望尽天涯路”，讲的是人生之孤独迷茫，不知前路何处；第二境界“衣带渐宽终不悔，为伊消得人憔悴”，讲的是有了目标，并不惜代价、锲而不舍地追逐；第三境界“众里寻他千百度。蓦然回首，那人却在，灯火阑珊处”，讲的是一番积累，豁然贯通。</p>
-<p>对照静安先生的三境界，我的境界应该是脚踏两境界——第一与第二境界之间，有几分迷茫与孤独，也有一些大大小小的目标并为之努力着。</p>
-<p>另一三境界之说为宋代禅宗大师青原行思提出参禅的三重境界：参禅之初，看山是山，看水是水；禅有悟时，看山不是山，看水不是水；禅中彻悟，看山仍然山，看水仍然是水。</p>
-<p>这三重境界比较明显，不作解释。对照之，我已经处在“看山不是山，看水不是水“的阶段了。</p>
-<p>二十年了，还没活明白。有时候读宇宙学、人类学，会发觉自己的那点迷茫与痛苦算不得什么，太普遍，太渺小，只不过在同样渺小的个体中被放大了。读哲学会时而通达，时而更加困惑。因为阅历尚浅，很多问题想不通。</p>
-<h2 id="阅历"><a href="#阅历" class="headerlink" title="阅历"></a>阅历</h2><p>阅历二字，可拆成“阅”与“历”。</p>
-<p>我们的阅历便是由阅和历组成的。阅是我们看到的，历是我们经历的。二十岁的我们，几乎都在象牙塔里过着还算安逸的生活，大多没经历过人生的大风大浪。因而“历”是较为浅薄的。</p>
-<p>而“阅“不一样，看书看剧看番看电影，都能增长我们的”阅“，体验我们没经历过的事情，获取我们没有过的观点。常有人问读书有什么用，我觉得读书（非垃圾书籍）是最能增长”阅“的途径。虽然都说百闻不如一见，我们从书中学到的观点、体验的经历都是别人的，但我们读多了，思考多了，与现实对照多了，这些就是你自己的财富。</p>
-<p>有时也会有朋友让我推荐书籍（自己看或者当礼物送人），看来我成功地树立了爱读书青年的形象，哈哈哈哈。</p>
-<p>消遣读散文，逃避读小说，装逼读诗，悲伤读科学，膨胀读哲学。</p>
-<h2 id="杠精"><a href="#杠精" class="headerlink" title="杠精"></a>杠精</h2><p>其实很多“杠精”真的不杠，也不完全是喷子。</p>
-<p>举个例子。前段时间在网易云看一首歌的MV，大概是怀念童年的那种做旧风格。</p>
-<p>有条评论说：”就事论事，动画做的就是很烂，而且不用心，帧率很低。“</p>
-<p>然后评论区就炸了。</p>
-<p>其实仔细一想，他或许懂一点做视频的专业知识，但是他的脑子里可能也就这么点东西，就这么点逻辑，他不懂音乐，更不懂情怀。MV看了半天没看懂当中动人之处，只看见视频做得比较简单，再加上自己比较倔，还有点自以为是，于是就发表了点言论，于是就成大众眼中的杠精了。</p>
-<p>这么一想，“杠精”其实还挺可怜的。人家就懂这么点东西，还想参与一下评论一下表现一下；或许你骂他沙雕他也不一定会回怼，但是你要说他说得不对，那不就触碰到他的G点了，那不得跟你抬杠？</p>
-<p>再仔细一想，其实有时候自己也是个杠精。我有时候也会夜郎自大，发表一点自以为是的评论，落在别人眼里不就是个杠精嘛。</p>
-<p>当然，杠精和喷子、键盘侠不一样。杠精只是偶尔沙雕一下，喷子就是没脑子的沙雕，键盘侠是有文化有脑子的沙雕。</p>
-<h2 id="三观"><a href="#三观" class="headerlink" title="三观"></a>三观</h2><p>其实三观不存在什么正不正的，正的方式都不一样。</p>
-<h2 id="媒体"><a href="#媒体" class="headerlink" title="媒体"></a>媒体</h2><p>这是我一直痛心疾首的问题……</p>
-<p>中国的媒体真的缺乏责任心，要么喜欢夸大其词夺人耳目，要么在接近真相时畏缩不前甚至掩人耳目（当然这背后有很深刻很复杂很无奈的原因……）。</p>
-<p>远一点，红黄蓝事件的后续呢？听说最近红黄蓝的股价还直线上涨了。</p>
-<p>近一点，疫苗事件的后续呢？官方的那些文字我是真的看不下去。</p>
-<p>话说柴静为什么“不见了”？《穹顶之下》为什么看不到了？</p>
-<p>写了很多又删了。不敢写下去了，算了，下个话题吧。</p>
-<h2 id="戾气"><a href="#戾气" class="headerlink" title="戾气"></a>戾气</h2><p>我总觉得社会戾气真的很重。</p>
-<p>光看娱乐圈，明星微博撕逼屡见不鲜（虽然这很能满足我的吃瓜心理），直播间里主播间直播互怼互骂（虽然我看得也十分激动甚至很爽）。</p>
-<p>微博里的水军和脑残粉，直播间里的水军和喷子，关键是没脑子的人总是很容易被水军带起节奏来，真的是这个时代特有的现象。再看看那些名人明星的黑历史，真的是讽刺。</p>
-<h2 id="摆脱"><a href="#摆脱" class="headerlink" title="摆脱"></a>摆脱</h2><p>曾经给自己写过一句话：摆脱他人的期待，成为真正的自己。（应该是出自伍尔夫的书）</p>
-<p>现在回想一下自己的经历，其实自己大多数时候都活在别人的期望之下。</p>
-<p>大家都喜欢会叫人的小孩，大家都夸赞成绩好的学生，大家都仰慕能力强的大佬。（大家不指所有人，仅代表世俗的看法，我也怕杠精啊……）</p>
-<p>于是我成为了这样的人。</p>
-<p>但是我真的想成为这样的人吗？</p>
-<p>东野圭吾有一本书叫《时生》，个人非常喜欢。看完后我也扪心自问过，来到这个世界上，我真的开心幸福吗？</p>
-<p>我们的降生源自父母或正确或错误的婚姻，是被动的、迫于无奈的。如果时光倒流二十年，让你选择出生与否，你会作何选择？</p>
-<p>我一直很佩服那些敢想敢做，果敢地追求自己真正所需所想的人，他们是生活的真正的强者。而我则是羁绊太多的懦夫。</p>
-<p>最近晚上跑完步，总能遇到很多结束晚自习的考研党，他们或结伴或独行，有的人脸上写满了疲惫与迷茫，有的人面无表情，有的人脸上洋溢着满足（或许是小情侣吧…）。</p>
-<p>希望读研的人，都是为自己而读。不是为了读研而读研。</p>
-<p>而我到底想做什么事成为怎样的人？</p>
-<p>（不你不想 哈哈哈哈）</p>
-<p><strong>2018.8.17凌晨，于秦淮</strong></p>
-<p><strong>七夕？晚安。</strong></p>
+
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>Vtk，（visualization toolkit）是一个开源的免费软件系统，主要用于三维计算机图形学、图像处理和可视化。Vtk是在面向对象原理的基础上设计和实现的，它的内核是用C++构建的，包含有大约250,000行代码，2000多个类，还包含有几个转换界面，因此也可以自由的通过Java，Tcl/Tk和Python各种语言使用vtk。（百度百科） </p>
+<p>这里我当然用Python使用VTK了。 </p>
 </the>
       
     </div>
@@ -373,13 +338,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a  href="/2018/08/23/idea/">我们的观点从何而来</a></p>
+        <p><span>本文标题:</span><a  href="/2019/10/25/robo3/">Robotics(3)VTK读取STL</a></p>
         <p><span>文章作者:</span><a  href="/" title="访问 吉吉 的个人博客">吉吉</a></p>
-        <p><span>发布时间:</span>2018年08月23日 - 08时43分</p>
-        <p><span>最后更新:</span>2018年10月21日 - 16时58分</p>
+        <p><span>发布时间:</span>2019年10月25日 - 12时35分</p>
+        <p><span>最后更新:</span>2019年10月25日 - 12时56分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2018/08/23/idea/" title="我们的观点从何而来">http://yoursite.com/2018/08/23/idea/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2018/08/23/idea/　　作者: 吉吉" title=""></span>
+            <span>原始链接:</span><a class="post-url" href="/2019/10/25/robo3/" title="Robotics(3)VTK读取STL">http://yoursite.com/2019/10/25/robo3/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2019/10/25/robo3/　　作者: 吉吉" title=""></span>
         </p>
         <p>
             <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
@@ -390,18 +355,9 @@
 
 <nav id="article-nav">
   
-    <a  href="/2018/09/01/the-old/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          老者
-        
-      </div>
-    </a>
   
-  
-    <a  href="/2018/08/22/Hello-World/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">写在前面</div>
+    <a  href="/2019/10/07/robo2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Robotics(2)matplotlib与PyQt5</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -413,7 +369,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#境界"><span class="toc-number">1.</span> <span class="toc-text">境界</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#阅历"><span class="toc-number">2.</span> <span class="toc-text">阅历</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#杠精"><span class="toc-number">3.</span> <span class="toc-text">杠精</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三观"><span class="toc-number">4.</span> <span class="toc-text">三观</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#媒体"><span class="toc-number">5.</span> <span class="toc-text">媒体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#戾气"><span class="toc-number">6.</span> <span class="toc-text">戾气</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#摆脱"><span class="toc-number">7.</span> <span class="toc-text">摆脱</span></a></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li></ol>
 </div>
 <style>
     .left-col .switch-btn {
@@ -474,7 +430,7 @@
 <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
 <script>
 var gitment = new Gitment({
-  id: '我们的观点从何而来', // 可选。默认为 location.href
+  id: 'Robotics(3)VTK读取STL', // 可选。默认为 location.href
   owner: 'nuaajhc',
   repo: 'nuaajhc.github.io',
   oauth: {
@@ -491,13 +447,11 @@ gitment.render('comments')
 
     <div class="scroll" id="post-nav-button">
         
-            <a  href="/2018/09/01/the-old/" title="上一篇: 老者">
-                <i class="fa fa-angle-left"></i>
-            </a>
+            <a  href="/" title="回到主页"><i class="fa fa-home"></i></a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a  href="/2018/08/22/Hello-World/" title="下一篇: 写在前面">
+            <a  href="/2019/10/07/robo2/" title="下一篇: Robotics(2)matplotlib与PyQt5">
                 <i class="fa fa-angle-right"></i>
             </a>
         
