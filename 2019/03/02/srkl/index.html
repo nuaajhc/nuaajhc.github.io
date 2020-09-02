@@ -125,6 +125,46 @@
                 })();
             </script>
         
+        <!--添加运行时间-->
+        <span id="sitetime"></span>
+        <script language=javascript>
+            function siteTime(){
+                window.setTimeout("siteTime()", 1000);
+                var seconds = 1000;
+                var minutes = seconds * 60;
+                var hours = minutes * 60;
+                var days = hours * 24;
+                var years = days * 365;
+                var today = new Date();
+                var todayYear = today.getFullYear();
+                var todayMonth = today.getMonth()+1;
+                var todayDate = today.getDate();
+                var todayHour = today.getHours();
+                var todayMinute = today.getMinutes();
+                var todaySecond = today.getSeconds();
+                /* 
+              Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+              year - 作为date对象的年份，为4位年份值
+              month - 0-11之间的整数，做为date对象的月份
+              day - 1-31之间的整数，做为date对象的天数
+              hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+              minutes - 0-59之间的整数，做为date对象的分钟数
+              seconds - 0-59之间的整数，做为date对象的秒数
+              microseconds - 0-999之间的整数，做为date对象的毫秒数
+             */
+                var t1 = Date.UTC(2020,08,09,09,52,53); //北京时间2018-2-13 00:00:00
+                var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+                var diff = t2-t1;
+                var diffYears = Math.floor(diff/years);
+                var diffDays = Math.floor((diff/days)-diffYears*365);
+                var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+                var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+                var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+                document.getElementById("sitetime").innerHTML=" <br />"+"❤已经<br />"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 <br />"+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+            }
+            siteTime();
+        </script>
+        <!--// 添加运行时间-->
         
             <div id="switch-btn" class="switch-btn">
                 <div class="icon">
@@ -330,7 +370,7 @@
 <div id="decryptionError" style="display: none;">Incorrect Password!</div>
 <div id="noContentError" style="display: none;">No content to display!</div>
 <div id="encrypt-blog" style="display:none">
-U2FsdGVkX1/EahvInZ8LeQ6oFKmHbRYBv0ZcA0SZw+PxtkLKc/06wk6+3sNVd2MXvaVpl/JX9EVIDG7KHMxpE0pYnY9ogBIhkx090X86/EXCR2VFfJzDKbbOwT2DxUPf6Tsbnwdg9Tm5S6NOCdQ+cdfjtotcXflphvUBnF9RmAPIYvI3seBk2GDUFeDTUNiHWGQ6kLe+/ufKU/dr6roo88klJEpTZ2pGLgt8pgf4ZvPuzMEJg/HdeMXUrDKKmBcSy1wYqtPzPoePOt+U/8mdlh91Dw2dyzJsGjMWTduNF4mHP1zDb32jf0ijKSJeFHbVVcz1qB/LtWrQ3QdeoDELQnH5svYyGqIP/0Acb//34ecGTUkLPRTC9WXFLT7mmw2+yA0NJMDw4icXbqvgtntpbHxeEqzYqIJeFSgmNzI61etgGMTEyWZGtkHgfPkbzYKizUz4oXU5d2uhjtpZMsMJzqoRPirLXuOlVzsXIl/Foy/L/rrTNCFXFg6z7r9kQw3X1QkMcb2uKSQCR299QLqh8SANCUYs7iwYfsyY40uAQU0SqnKtj0b+gwYqURkpZvD7
+U2FsdGVkX19ePQvIyEOBut72ZLZ834O+KENC49Ho3+YDi7KI+bWPCbncp+Vkx0LxyDBm+Skl3Hxud8hYva5cC/caRMQd4NYC1S026YwjKotca5OPyvz/cgVjRMRbp39m/MLtCR/IxyHbFrhN5mujnAmBeAhNyvK2iFCpFkMQy0UcIdMtjNBrCE+Patoylbsf18qC/ppLUlKFGlMCy25v7G7dUOLJwrlPfOFe6YuOJsaQhEeJdcnLtSco63klmdipL/kAjp5bC6PN2JIWE8AHgUZHjQKhBQh16VsJJZZbdXxYqDdRQjkWW4Co3FCNrySg72orogsETJX/5CxHn0ryzc916j6EMqX3bM7tGVacK3ZGqEXW21zEocaVfJY3pMw+ypcI4xh+0a0j/OfZPn8riuq5eblPjOrkA8pTGUhczTonLiVdwO61EeDCMc5Gb3DqEKKshp0j5Jq21oo+AKDtwmvI32vekSVfB/YlN6uQeWqjXe37P9M+7CQjZ6Uv3G7agQxx/txw0bRSTfUzmo1tCAc6mjIZD9t5ygnWtnVA99zodt710mvDIkvk+M+S7dpw
 </div>
 <script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
       
@@ -514,46 +554,6 @@ gitment.render('comments')
             </div>
         </div>
         
-            <!--添加运行时间-->
-            <span id="sitetime"></span>
-            <script language=javascript>
-                function siteTime(){
-                    window.setTimeout("siteTime()", 1000);
-                    var seconds = 1000;
-                    var minutes = seconds * 60;
-                    var hours = minutes * 60;
-                    var days = hours * 24;
-                    var years = days * 365;
-                    var today = new Date();
-                    var todayYear = today.getFullYear();
-                    var todayMonth = today.getMonth()+1;
-                    var todayDate = today.getDate();
-                    var todayHour = today.getHours();
-                    var todayMinute = today.getMinutes();
-                    var todaySecond = today.getSeconds();
-                    /* 
-                  Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
-                  year - 作为date对象的年份，为4位年份值
-                  month - 0-11之间的整数，做为date对象的月份
-                  day - 1-31之间的整数，做为date对象的天数
-                  hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
-                  minutes - 0-59之间的整数，做为date对象的分钟数
-                  seconds - 0-59之间的整数，做为date对象的秒数
-                  microseconds - 0-999之间的整数，做为date对象的毫秒数
-                 */
-                    var t1 = Date.UTC(2020,08,09,09,52,00); //北京时间2018-2-13 00:00:00
-                    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
-                    var diff = t2-t1;
-                    var diffYears = Math.floor(diff/years);
-                    var diffDays = Math.floor((diff/days)-diffYears*365);
-                    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
-                    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
-                    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
-                    document.getElementById("sitetime").innerHTML="❤已经"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
-                }
-                siteTime();
-            </script>
-            <!--// 添加运行时间-->
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>

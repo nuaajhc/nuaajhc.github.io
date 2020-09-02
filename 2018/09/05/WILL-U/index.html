@@ -125,6 +125,46 @@
                 })();
             </script>
         
+        <!--添加运行时间-->
+        <span id="sitetime"></span>
+        <script language=javascript>
+            function siteTime(){
+                window.setTimeout("siteTime()", 1000);
+                var seconds = 1000;
+                var minutes = seconds * 60;
+                var hours = minutes * 60;
+                var days = hours * 24;
+                var years = days * 365;
+                var today = new Date();
+                var todayYear = today.getFullYear();
+                var todayMonth = today.getMonth()+1;
+                var todayDate = today.getDate();
+                var todayHour = today.getHours();
+                var todayMinute = today.getMinutes();
+                var todaySecond = today.getSeconds();
+                /* 
+              Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+              year - 作为date对象的年份，为4位年份值
+              month - 0-11之间的整数，做为date对象的月份
+              day - 1-31之间的整数，做为date对象的天数
+              hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+              minutes - 0-59之间的整数，做为date对象的分钟数
+              seconds - 0-59之间的整数，做为date对象的秒数
+              microseconds - 0-999之间的整数，做为date对象的毫秒数
+             */
+                var t1 = Date.UTC(2020,08,09,09,52,53); //北京时间2018-2-13 00:00:00
+                var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
+                var diff = t2-t1;
+                var diffYears = Math.floor(diff/years);
+                var diffDays = Math.floor((diff/days)-diffYears*365);
+                var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
+                var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
+                var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
+                document.getElementById("sitetime").innerHTML=" <br />"+"❤已经<br />"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 <br />"+diffMinutes+" 分钟 "+diffSeconds+" 秒";
+            }
+            siteTime();
+        </script>
+        <!--// 添加运行时间-->
         
             <div id="switch-btn" class="switch-btn">
                 <div class="icon">
@@ -330,7 +370,7 @@
 <div id="decryptionError" style="display: none;">Incorrect Password!</div>
 <div id="noContentError" style="display: none;">No content to display!</div>
 <div id="encrypt-blog" style="display:none">
-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
+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
 </div>
 <script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
       
@@ -514,46 +554,6 @@ gitment.render('comments')
             </div>
         </div>
         
-            <!--添加运行时间-->
-            <span id="sitetime"></span>
-            <script language=javascript>
-                function siteTime(){
-                    window.setTimeout("siteTime()", 1000);
-                    var seconds = 1000;
-                    var minutes = seconds * 60;
-                    var hours = minutes * 60;
-                    var days = hours * 24;
-                    var years = days * 365;
-                    var today = new Date();
-                    var todayYear = today.getFullYear();
-                    var todayMonth = today.getMonth()+1;
-                    var todayDate = today.getDate();
-                    var todayHour = today.getHours();
-                    var todayMinute = today.getMinutes();
-                    var todaySecond = today.getSeconds();
-                    /* 
-                  Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
-                  year - 作为date对象的年份，为4位年份值
-                  month - 0-11之间的整数，做为date对象的月份
-                  day - 1-31之间的整数，做为date对象的天数
-                  hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
-                  minutes - 0-59之间的整数，做为date对象的分钟数
-                  seconds - 0-59之间的整数，做为date对象的秒数
-                  microseconds - 0-999之间的整数，做为date对象的毫秒数
-                 */
-                    var t1 = Date.UTC(2020,08,09,09,52,00); //北京时间2018-2-13 00:00:00
-                    var t2 = Date.UTC(todayYear,todayMonth,todayDate,todayHour,todayMinute,todaySecond);
-                    var diff = t2-t1;
-                    var diffYears = Math.floor(diff/years);
-                    var diffDays = Math.floor((diff/days)-diffYears*365);
-                    var diffHours = Math.floor((diff-(diffYears*365+diffDays)*days)/hours);
-                    var diffMinutes = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours)/minutes);
-                    var diffSeconds = Math.floor((diff-(diffYears*365+diffDays)*days-diffHours*hours-diffMinutes*minutes)/seconds);
-                    document.getElementById("sitetime").innerHTML="❤已经"+/*diffYears+" 年 "+*/diffDays+" 天 "+diffHours+" 小时 "+diffMinutes+" 分钟 "+diffSeconds+" 秒";
-                }
-                siteTime();
-            </script>
-            <!--// 添加运行时间-->
             <div class="visit">
                 
                     <span id="busuanzi_container_site_pv" style='display:none'>
